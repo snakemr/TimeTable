@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -48,7 +49,8 @@ fun Table(data: MainViewModel) = BoxWithConstraints(Modifier.fillMaxSize()) {
     }) {
         if (canGoLeft) item {
             Box(Modifier.fillMaxHeight().width(columnWidth)) {
-                Icon(Icons.Default.ArrowBack, "", Modifier.align(Alignment.Center))
+                Icon(Icons.Default.ArrowBack, "",
+                    Modifier.align(Alignment.Center), tint = MaterialTheme.colors.onBackground)
             }
         }
 
@@ -85,7 +87,8 @@ fun Table(data: MainViewModel) = BoxWithConstraints(Modifier.fillMaxSize()) {
 
         if (canGoRight) item {
             Box(Modifier.fillMaxHeight().width(columnWidth)) {
-                Icon(Icons.Default.ArrowForward, "", Modifier.align(Alignment.Center))
+                Icon(Icons.Default.ArrowForward, "",
+                    Modifier.align(Alignment.Center), tint = MaterialTheme.colors.onBackground)
             }
         }
     }
